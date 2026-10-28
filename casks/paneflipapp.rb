@@ -1,6 +1,6 @@
 cask "paneflipapp" do
   # A release pull request raises this together with MARKETING_VERSION in macos/project.yml (the Tests workflow checks).
-  version "1.4"
+  version "1.4.1"
   # The disk image is built when the release is published, after this file is merged: its checksum cannot be known here.
   sha256 :no_check
 
@@ -22,49 +22,24 @@ cask "paneflipapp" do
   end
 
 
+
   # BEGIN release notes (written by the Release workflow of the app)
   caveats <<~'EOS'
-    What's new in PaneFlip 1.4:
+    What's new in PaneFlip 1.4.1:
 
-    A menu bar island shows the zones of each display and the zone you are in (#371)
-
-    PaneFlip now has an island in the menu bar of every display. It hangs from the notch, or sits in the middle where there is none, and shows the zones of that display drawn small, the ones beyond the screen's edges too, with the zone of the window you are working in lit up and its name beside it. When you scroll through the zones, the frame of the screen glides along with the real windows.
-
-    The island opens below the menu bar when the pointer is on it and shows every zone with its name (#375)
-
-    Move the pointer onto the island in the menu bar and it grows below the menu bar and shows every zone, with its name or number. The zone with the focus stays lit. When the pointer leaves, the island shrinks back.
-
-    Drop a dragged window on a zone of the island (#376)
-
-    Drag a window onto the island and it opens; drop the window on one of its zones and it goes into that zone, whether the window was in a zone before or not. Zones beyond the screen's edges can be dropped on too (the window waits there and the layout does not scroll). The zone the window would go into lights up while you drag, and the island closes again when you drop.
-
-    Show and scroll the windows of a zone in the open island (#389)
-
-    Clicking a zone in the open island opens a carousel of that zone's windows under the picture. The front window fills a frame as large as the zone, the other windows lie against it, and the mouse wheel and two fingers scroll through them in step with the slide inside the zone. Clicking the zone again closes it.
-
-    * A small, quick swipe with two fingers moves on to the next zone, also after catching a glide (#372)
-    * The zone in the island shows - and + beyond the edges, and takes no room when no zone has the focus (#377)
-    * The frame in the island glides with the scroll on a display with no windows too (#380)
-    * The open island shows the real gap between the zones (#381)
-    * The island shows only the zones, in the middle of the screen (#382)
-    * On a display with a notch the island shows only when the pointer comes (#383)
-    * The map of the strip no longer shows in the corner of the screen while the layout scrolls (#384)
-    * The windows behind the island no longer see the pointer (#385)
-    * Scroll the zones with the mouse wheel or two fingers over the open island (#388)
-    * Fix stutter when scrolling the windows of a zone quickly (#390)
-    * Light the zone with the focus in the island at once, also beyond the screen's edge, and when it is clicked (#392)
-    * Write the zone numbers of the island in the menu bar's font and hide them as the island shrinks (#393)
-    * Use the island's green as the app's accent colour, in the controls too, and highlight the zone the focus reaches with a thin frame (#394)
-    * Fix quick focus moves between zones with the keyboard, beyond the screen's edge too (#395)
-    * Fix the delay of the focus and the stalls of the app when a slow app such as Mail takes the focus (#396)
-    * Show the windows of the zone with the focus as soon as the pointer comes onto the island (#397)
-    * Use the system accent colour everywhere, and the app's green when the system accent is Multicolor (#399)
-    * Choose a window from the window row of the open island and bring it to the front (#400)
-    * Let a click on a zone beyond the screen's edge in the open island scroll it into view and focus it, without a focus frame (#401)
-    * Show the window title as far from the frame as from the island's lower edge (#402)
-    * Remove the shake of the pointer that switched the window snapping on during a drag (#403)
-    * Show the apps of a zone that are not open in its window row, with Closed, Hidden or Minimized under them, and open them with a click (#404)
-    * Complete the translations of the strings that had none (#405)
+    * Show every window's title in the island's window row, with Closed, Hidden or Minimized under the title of an app that is not open (#409)
+    * Scroll the layout back to the screen's own zones when the focus goes to one of them, from the keyboard, the island or a click (#410)
+    * Fit the cards of the island's window row within the island: the one in front keeps the width of the frame, the others share the rest (#413)
+    * Widen the open island where a zone holds several windows and zones do not wait beyond both edges of the screen (#414)
+    * Open the island's window row together with the island when the pointer comes onto it while a zone has the focus (#416)
+    * Put the windows of a zone in another order by dragging their cards in the island's window row (#418)
+    * Put a dragged window in a chosen place among a zone's windows by waiting over the zone in the open island (#420)
+    * Hide the island, sliding it up, while an app is full screen or Mission Control or App Exposé is open, and bring it back down afterwards (#422)
+    * Remove moving through a zone's windows with the mouse's wheel button (#424)
+    * Remove the pill: the island in the menu bar is the only place that shows and switches a zone's windows (#426)
+    * Always stack apps in a zone: remove the switch for it from Settings (#427)
+    * Give PaneFlip a new app icon and menu bar icon: three zones side by side with two windows in the middle one (#433)
+    * Switch PaneFlip on and off with a left click on the menu bar icon, and open the menu with a right click (#434)
 
   EOS
   # END release notes
