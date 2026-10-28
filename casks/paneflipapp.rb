@@ -6,7 +6,7 @@ cask "paneflipapp" do
 
   url "https://github.com/ffferitkartalll/paneflipapp/releases/download/v#{version}/PaneFlip-#{version}.dmg"
   name "PaneFlip"
-  desc "Zones for displays, with stacked apps switched by a glass pill"
+  desc "Zones for displays, with stacked apps switched from an island in the menu bar"
   homepage "https://github.com/ffferitkartalll/paneflipapp"
 
   livecheck do
