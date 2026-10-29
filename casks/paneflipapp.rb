@@ -1,6 +1,6 @@
 cask "paneflipapp" do
   # A release pull request raises this together with MARKETING_VERSION in macos/project.yml (the Tests workflow checks).
-  version "1.4.2"
+  version "1.4.3"
   # The disk image is built when the release is published, after this file is merged: its checksum cannot be known here.
   sha256 :no_check
 
@@ -24,17 +24,18 @@ cask "paneflipapp" do
 
 
 
+
   # BEGIN release notes (written by the Release workflow of the app)
   caveats <<~'EOS'
-    What's new in PaneFlip 1.4.2:
+    What's new in PaneFlip 1.4.3:
 
-    * Hide the island while the layout editor is open (#438)
-    * Spread the windows of an unplugged display over the remaining display and bring them back when it returns (#442)
-    * Lay out a display that was unplugged with the Dock on it as if the Dock were still there (#444)
-    * Windows of an unplugged display return to the zones they came from when it is plugged in again (#446)
-    * Keep a two-finger swipe from sticking when the system switches the scroll listener off (#447)
-    * Return to the menu bar when the Settings window cannot be opened (#448)
-    * Do not wait for the Dock after a display change without the Accessibility permission (#449)
+    * Move the zone focus shortcuts to Control+Option and I, J, K, L (#454)
+    * Remove the note about unplugged screens from the layout apps settings (#456)
+    * Send the focused window to a zone with the keyboard, through the island (#458)
+    * Arrange the displays as a staircase and set where they stand on your desk in a new Displays tab (#461)
+    * Move the focus through the zones beyond the screen's edge before it goes to another display (#462)
+    * Give the focus to the window it was moved to when its app has a window on another display (#463)
+    * Show the Apps tab between Shortcuts and Updates in Settings (#464)
 
   EOS
   # END release notes
