@@ -1,6 +1,6 @@
 cask "paneflipapp" do
   # A release pull request raises this together with MARKETING_VERSION in macos/project.yml (the Tests workflow checks).
-  version "1.4.3"
+  version "1.4.4"
   # The disk image is built when the release is published, after this file is merged: its checksum cannot be known here.
   sha256 :no_check
 
@@ -25,17 +25,19 @@ cask "paneflipapp" do
 
 
 
+
   # BEGIN release notes (written by the Release workflow of the app)
   caveats <<~'EOS'
-    What's new in PaneFlip 1.4.3:
+    What's new in PaneFlip 1.4.4:
 
-    * Move the zone focus shortcuts to Control+Option and I, J, K, L (#454)
-    * Remove the note about unplugged screens from the layout apps settings (#456)
-    * Send the focused window to a zone with the keyboard, through the island (#458)
-    * Arrange the displays as a staircase and set where they stand on your desk in a new Displays tab (#461)
-    * Move the focus through the zones beyond the screen's edge before it goes to another display (#462)
-    * Give the focus to the window it was moved to when its app has a window on another display (#463)
-    * Show the Apps tab between Shortcuts and Updates in Settings (#464)
+    * Move the pointer between displays by the arrangement on your desk (#468)
+    * Use the real size of the displays for the arrangement on your desk (#469)
+    * Show the windows of a zone on the island while you step through them (#471)
+    * Show all cards of the island's window row at full width and widen the island to hold them (#472)
+    * Remove the spring from the movements of the island (#473)
+    * Do not show a frame in the window row of a zone with no open window (#474)
+    * Stop apps that are not open showing as closed in the default zone after switching the zones beyond the edges off and on (#475)
+    * Bring only the window you move the focus to forward, not the other windows of its app (#476)
 
   EOS
   # END release notes
