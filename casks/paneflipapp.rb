@@ -1,6 +1,6 @@
 cask "paneflipapp" do
   # A release pull request raises this together with MARKETING_VERSION in macos/project.yml (the Tests workflow checks).
-  version "1.4.5"
+  version "1.4.6"
   # The disk image is built when the release is published, after this file is merged: its checksum cannot be known here.
   sha256 :no_check
 
@@ -27,21 +27,20 @@ cask "paneflipapp" do
 
 
 
+
   # BEGIN release notes (written by the Release workflow of the app)
   caveats <<~'EOS'
-    What's new in PaneFlip 1.4.5:
+    What's new in PaneFlip 1.4.6:
 
-    * Show the closed island on both sides of the notch (#480)
-    * Remove the floating zone (#482)
-    * Remove the shadow of the pictures of sliding windows (#483)
-    * Stop the app from freezing when the app in focus is slow to answer (#484)
-    * Place and list windows off the main thread, and leave a slow app alone for a while (#485)
-    * Keep the pointer from stalling while the app is busy (#486)
-    * Do not show the old window for a moment after a slide when the next window comes forward slowly (#487)
-    * Make the island lighter while it rests (#488)
-    * Clicking a window card on the open island while a slide runs now takes the slide over at once (#490)
-    * Undo adding a window to a zone or taking it out, with a message on the island and a shortcut (#492)
-    * Enlarge a window of a zone to the whole usable area of its screen for 15 seconds (#494)
+    * Quit, close, hide, minimize or remove a window from its card on the island (#498)
+    * Show an app that is not running as "Not running" on its card (#499)
+    * Show the windows of a zone on 16:9 cards as tall as the screen in the island's picture (#500)
+    * Open the island fully when the pointer comes onto it while the windows of a zone are shown alone (#501)
+    * Keep the island usable while an undo message shows (#502)
+    * Scroll from one screen of the layout to the next, not to the lines between zones (#505)
+    * Move the focus between zones on the screen first, then on to the other display, never to the screens beyond the edge (#506)
+    * Call the zones beyond the screen's edges "screens" in the app, the README and the website (#507)
+    * Keep the windows of screens beyond the edge completely out of sight, on a hidden display for each display (#509)
 
   EOS
   # END release notes
