@@ -1,6 +1,6 @@
 cask "paneflipapp" do
   # A release pull request raises this together with MARKETING_VERSION in macos/project.yml (the Tests workflow checks).
-  version "1.4.6"
+  version "1.4.7"
   # The disk image is built when the release is published, after this file is merged: its checksum cannot be known here.
   sha256 :no_check
 
@@ -28,19 +28,18 @@ cask "paneflipapp" do
 
 
 
+
   # BEGIN release notes (written by the Release workflow of the app)
   caveats <<~'EOS'
-    What's new in PaneFlip 1.4.6:
+    What's new in PaneFlip 1.4.7:
 
-    * Quit, close, hide, minimize or remove a window from its card on the island (#498)
-    * Show an app that is not running as "Not running" on its card (#499)
-    * Show the windows of a zone on 16:9 cards as tall as the screen in the island's picture (#500)
-    * Open the island fully when the pointer comes onto it while the windows of a zone are shown alone (#501)
-    * Keep the island usable while an undo message shows (#502)
-    * Scroll from one screen of the layout to the next, not to the lines between zones (#505)
-    * Move the focus between zones on the screen first, then on to the other display, never to the screens beyond the edge (#506)
-    * Call the zones beyond the screen's edges "screens" in the app, the README and the website (#507)
-    * Keep the windows of screens beyond the edge completely out of sight, on a hidden display for each display (#509)
+    * Windows show how they look now when switching between windows of a zone and scrolling to screens beyond the edge (#513)
+    * A two-finger swipe no longer jumps ahead while the pictures are taken, and one lifted early still moves one step (#514)
+    * Scrolls to screens beyond the edge and swipes start sooner (#515)
+    * The island shows the step when two fingers lift before the pictures of a swipe through a zone's windows are ready (#517)
+    * Stepping through a zone's windows no longer jumps over a window or goes back (#519)
+    * Scrolling beyond the screen's edge no longer dims the menu bar or drops frames (#521)
+    * Slides and scrolls run at a steadier frame rate and use less CPU (#522)
 
   EOS
   # END release notes
