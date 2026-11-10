@@ -1,6 +1,6 @@
 cask "paneflipapp" do
   # A release pull request raises this together with MARKETING_VERSION in macos/project.yml (the Tests workflow checks).
-  version "1.4.8"
+  version "1.5"
   # The disk image is built when the release is published, after this file is merged: its checksum cannot be known here.
   sha256 :no_check
 
@@ -30,33 +30,54 @@ cask "paneflipapp" do
 
 
 
+
   # BEGIN release notes (written by the Release workflow of the app)
   caveats <<~'EOS'
-    What's new in PaneFlip 1.4.8:
+    What's new in PaneFlip 1.5:
 
-    * Windows behind in a stack no longer show during a scroll beyond the edge (#528)
-    * Scrolls beyond the edge keep a steady frame rate (#529)
-    * The Settings window no longer slows the scrolls beyond the edge, open or closed (#531)
-    * Windows behind in a stack show less often in a scroll beyond the edge (#532)
-    * Use Caps Lock as a modifier key of the shortcuts (#536)
-    * Show the Settings window's tabs live again (#537)
-    * Keep the send-to-zone shortcut for other apps when it would do nothing (#540)
-    * Give Caps Lock back when the app is stopped or crashes (#541)
-    * Open Settings when the running app is opened again (#546)
-    * Let the Settings window go behind other windows and grow up to 960 pt (#547)
-    * Show only the accent colour in Settings (#548)
-    * Open Settings when the app is opened again, also while the island is shown (#550)
-    * Ask before a layout is removed (#551)
-    * Keep the scrolls smooth after the Settings window was closed (#553)
-    * Try the Caps Lock key mapping again when it failed, mark the layout removal button as destructive (#555)
-    * Scrolls no longer photograph windows that are out of view (#557)
-    * Drag a card of the island's window row onto a zone of the island or of the screen, or out of its zone (#559)
-    * Show the Dock's notification badge on the cards of the island's window row (#561)
-    * Show the notification badge of a card where its remove button stands (#563)
-    * Move the lines between zones by hand on the desktop, and undo the moves (#565)
-    * Give every screen beyond the edge its own margin and a gap to the next one, and let the scroll skip the gap (#566)
-    * Number the zones of screens further beyond the edge with a sign more for each screen (#567)
-    * Drag a window into a zone with Control and Option by default (#568)
+    Add a notch to every zone that opens a row of its windows (#603)
+
+    Every zone that holds a window has a small notch at the top middle of its edge. It lights up when the pointer is on it. A click on it opens a row of the zone's windows; a click on a card of the row brings that window to the front of the zone and gives it the focus. The wheel and two fingers on the notch switch the zone's windows, as on the open island's row of cards. Each card is as wide as its window's name, up to the width the island gives a title (a longer name ends in "..."). The row stays open while the pointer is on it.
+
+    * Edit the layout, open the selected apps, open Settings or quit from the open island (#572)
+    * Choose the apps to start with a layout from the cards of the open island (#574)
+    * Choose the default zone of a layout in the layout editor (#575)
+    * Set the gap between zones, the margin at screen edges and the minimum zone size in the layout editor (#576)
+    * Show the screens beyond the edge like the screen in the layout editor (#577)
+    * Remove the Apps button and its sheet from the Layouts tab (#578)
+    * Set the gap, the edge margin and the minimum zone size for each layout of each screen (#580)
+    * Cards of apps that are not open say why in brackets after their title (#582)
+    * The open island has a row of buttons with a symbol and words, and the same room everywhere (#583)
+    * Everything the pointer can click in the open island lights up under it (#584)
+    * Turn zone edge editing on with a right click on Edit layout (#585)
+    * The Shortcuts tab of Settings no longer grows past the height limit (#586)
+    * The open island casts a soft shadow (#589)
+    * The buttons in the top row of the island are as large as the layout editor's buttons (#590)
+    * Everything that can be clicked in Settings lights up under the pointer (#591)
+    * Settings keeps its accent colour while the window is not in front (#592)
+    * A card carried out of the island lights the zones like a dragged window does (#593)
+    * Lit zones have the corners of a window (#594)
+    * Give the island a faint rim so it shows against a black window behind it (#596)
+    * Keep the margin of the layout round the screen's edges when a window is enlarged (#600)
+    * Make the buttons of the island's message line as large as the buttons of its top row (#601)
+    * Show the switch of a zone's windows in the zone's notch, not in the island (#604)
+    * Do not open the focused zone's windows when the pointer comes onto the island (#605)
+    * Keep the island's row of windows inside the island while it opens and closes (#607)
+    * Switch a zone's windows only when the zone has the focus and the pointer is on it (#609)
+    * Bring a zone's window forward when its card is clicked in a zone without the focus (#610)
+    * Keep a window that is in no zone in front while the layout scrolls to other screens (#611)
+    * Leave a zone's notch as it is while the island shows its row of windows (#612)
+    * Tint the card under the pointer in a zone's open notch (#614)
+    * Open the notch of a zone with one window by a click (#615)
+    * Draw app icons smoothly (#617)
+    * Slide to the window when its card is clicked in a zone without the focus (#619)
+    * Sort the windows of a zone by dragging their cards in its notch (#621)
+    * Make the notch of a zone as wide as its open windows ask (#623)
+    * Cut the notch under the pointer into a part for each open window (#624)
+    * Grow the notch into its row of windows, and back, as one movement (#625)
+    * Expand the open notch into the island's row of cards with a "more" button (#627)
+    * Sort the windows by dragging their cards in the expanded notch (#628)
+    * Put the button that ticks an app to start with the layout to the left of the remove button (#629)
 
   EOS
   # END release notes
