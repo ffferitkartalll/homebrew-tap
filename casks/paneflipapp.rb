@@ -1,6 +1,6 @@
 cask "paneflipapp" do
   # A release pull request raises this together with MARKETING_VERSION in macos/project.yml (the Tests workflow checks).
-  version "1.5.1"
+  version "1.5.2"
   # The disk image is built when the release is published, after this file is merged: its checksum cannot be known here.
   sha256 :no_check
 
@@ -32,20 +32,18 @@ cask "paneflipapp" do
 
 
 
+
   # BEGIN release notes (written by the Release workflow of the app)
   caveats <<~'EOS'
-    What's new in PaneFlip 1.5.1:
+    What's new in PaneFlip 1.5.2:
 
-    * Show the Dock's notification badge on the cards of a zone's notch (#633)
-    * Fade the buttons of the cards in the expanded notch in and out (#635)
-    * Do nothing when the trackpad swipe goes toward a window or a screen that is not there (#637)
-    * Fit the open notch's cards to the notification badges that come and go (#639)
-    * Show the Dock's notification badge on a zone's notch that opens after the notification came (#641)
-    * Keep a zone at an aspect ratio in the layout editor (#643)
-    * Make a grid of zones in the layout editor (#645)
-    * Layouts, Grid and Reset of the layout editor work on the screen in view (#646)
-    * Zones of equal size are shown equal, and merging two zones leaves the others as they were (#647)
-    * The lines of the zones reach the edge of the usable screen, and keep a zone's aspect ratio on the desktop too (#648)
+    * The list of layouts in the layout editor scrolls (#654)
+    * The screens beyond the edge show the gap and the margin in the layout editor, and the line to be made reaches the edge (#655)
+    * The buttons and the hints of the layout editor show only when asked for (#656)
+    * Choose whether PaneFlip works as an island; without it, the menu bar icon opens it as a popover (#658)
+    * Only the zone with the focus shows a notch, on whichever display it is (#662)
+    * The notch of a zone is out of sight while one of its windows is dragged (#667)
+    * A window put back by Undo returns to its place among the zone's windows, not to the end (#668)
 
   EOS
   # END release notes
