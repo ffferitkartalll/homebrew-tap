@@ -1,6 +1,6 @@
 cask "paneflipapp" do
   # A release pull request raises this together with MARKETING_VERSION in macos/project.yml (the Tests workflow checks).
-  version "1.5.2"
+  version "1.6"
   # The disk image is built when the release is published, after this file is merged: its checksum cannot be known here.
   sha256 :no_check
 
@@ -33,17 +33,18 @@ cask "paneflipapp" do
 
 
 
+
   # BEGIN release notes (written by the Release workflow of the app)
   caveats <<~'EOS'
-    What's new in PaneFlip 1.5.2:
+    What's new in PaneFlip 1.6:
 
-    * The list of layouts in the layout editor scrolls (#654)
-    * The screens beyond the edge show the gap and the margin in the layout editor, and the line to be made reaches the edge (#655)
-    * The buttons and the hints of the layout editor show only when asked for (#656)
-    * Choose whether PaneFlip works as an island; without it, the menu bar icon opens it as a popover (#658)
-    * Only the zone with the focus shows a notch, on whichever display it is (#662)
-    * The notch of a zone is out of sight while one of its windows is dragged (#667)
-    * A window put back by Undo returns to its place among the zone's windows, not to the end (#668)
+    See all the windows of a zone as a grid, and open it with a mouse wheel click or a swipe (#677)
+
+    A zone's windows can be shown as a grid of pictures laid over the zone, the way Mission Control lays out windows. A click on a card chooses that window, a card can be carried to another place, and a click on the dimmed zone closes the grid. The grid opens and closes with one smooth movement.
+
+    * The notch of a zone shows its windows as parts, the front one in the accent colour, at rest too (#672)
+    * Settings to open the zone notch only on a click, and to light it up while windows switch (#674)
+    * The lit part of the notch slides to the window in front, and the notch stays in sight while windows switch (#675)
 
   EOS
   # END release notes
