@@ -1,6 +1,6 @@
 cask "paneflipapp" do
   # A release pull request raises this together with MARKETING_VERSION in macos/project.yml (the Tests workflow checks).
-  version "1.7.1"
+  version "1.8"
   # The disk image is built when the release is published, after this file is merged: its checksum cannot be known here.
   sha256 :no_check
 
@@ -36,19 +36,17 @@ cask "paneflipapp" do
 
 
 
+
   # BEGIN release notes (written by the Release workflow of the app)
   caveats <<~'EOS'
-    What's new in PaneFlip 1.7.1:
+    What's new in PaneFlip 1.8:
 
-    * The arrow keys in the grid of the whole layout go to the screen that lies beside or below, as the desk shows (#710)
-    * One card is chosen at a time, and the card with the focus is the chosen one while the pointer is on none (#711)
-    * The shadows of the cards in the grid of a zone's windows are not cut at the menu bar or the Dock (#713)
-    * The card that is carried in a grid grows as it is taken up instead of at once (#714)
-    * The windows of a display that is unplugged are left alone (#716)
-    * Every display starts with a layout of one zone (#718)
-    * The last layout of a display cannot be removed, only reset (#719)
-    * The first layout of a display is its default layout (#721)
-    * Layouts that were not renamed are named in the app's language (#722)
+    Choose the layout of every display at once and where the windows of an unplugged display go (Scenes) (#726)
+
+    A scene sets the layout of each display in one go and says where the windows of a display go when it is unplugged. Switch scenes in the new Scenes tab or from the menu bar. When a display is unplugged, its windows move to the zones you chose for them or, where you chose none, to the zones that lie nearest to them on your desk, and they go back to their own zones when the display is plugged in again.
+
+    * Preview a layout large with the zones beyond the screen's edges, and see every layout as large as its display on the desk (#727)
+    * Lines between zones were cut off in the pictures of layouts on some displays (#728)
 
   EOS
   # END release notes
