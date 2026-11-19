@@ -1,6 +1,6 @@
 cask "paneflipapp" do
   # A release pull request raises this together with MARKETING_VERSION in macos/project.yml (the Tests workflow checks).
-  version "1.8"
+  version "1.8.1"
   # The disk image is built when the release is published, after this file is merged: its checksum cannot be known here.
   sha256 :no_check
 
@@ -37,16 +37,30 @@ cask "paneflipapp" do
 
 
 
+
   # BEGIN release notes (written by the Release workflow of the app)
   caveats <<~'EOS'
-    What's new in PaneFlip 1.8:
+    What's new in PaneFlip 1.8.1:
 
-    Choose the layout of every display at once and where the windows of an unplugged display go (Scenes) (#726)
-
-    A scene sets the layout of each display in one go and says where the windows of a display go when it is unplugged. Switch scenes in the new Scenes tab or from the menu bar. When a display is unplugged, its windows move to the zones you chose for them or, where you chose none, to the zones that lie nearest to them on your desk, and they go back to their own zones when the display is plugged in again.
-
-    * Preview a layout large with the zones beyond the screen's edges, and see every layout as large as its display on the desk (#727)
-    * Lines between zones were cut off in the pictures of layouts on some displays (#728)
+    * An app that is not open opens in the zone it was moved to, also on another display (#732)
+    * The Layouts tab no longer activates layouts or shows desktops, and Import and Add sit in each display's title row (#734)
+    * A layout chosen for a display in the scene in use is put on it at once (#736)
+    * The menu switches scenes instead of layouts (#737)
+    * Windows go to the zones that lie where theirs lay when another layout is put on a display (#739)
+    * A right click on a layout in a scene shows the apps in its zones (#740)
+    * The layout choice of a scene tells what a right click on a layout does (#742)
+    * Each scene keeps its own windows, also when two scenes use the same layout (#744)
+    * Windows the chosen scene does not remember are stacked in the display's usable area (#745)
+    * A right click on a layout in a scene shows that scene's apps, and does nothing for the layout in use (#746)
+    * Each layout of a scene keeps its own windows, so changing one never changes another (#748)
+    * The layout pictures in Settings are no longer huge when only one display is connected (#750)
+    * The title and the buttons of the cards in the grid view stand out in the accent colour (#752)
+    * The cards of apps that are not open no longer grow out of the middle when the grid view opens (#754)
+    * Step through the layouts of a display in the Layouts tab with the mouse wheel, and let the row rest on the nearest layout (#756)
+    * The grid view of a whole layout opens and closes as smoothly as the grid of one zone (#758)
+    * Cards of apps that are not open stay behind the open cards while the grid view slides (#759)
+    * A card closed or quit in the grid view turns into the card of a closed app (#760)
+    * The grid views no longer jump to where the fingers went while the windows were moving away (#761)
 
   EOS
   # END release notes
